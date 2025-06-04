@@ -292,6 +292,7 @@ namespace NzbDrone.Core.MediaFiles.TrackImport.Manual
                 item.Tracks = decision.Item.Tracks;
             }
 
+            item.ReleaseGroup = decision.Item.ReleaseGroup;
             item.Quality = decision.Item.Quality;
             item.IndexerFlags = (int)decision.Item.IndexerFlags;
             item.Size = _diskProvider.GetFileSize(decision.Item.Path);
@@ -342,6 +343,7 @@ namespace NzbDrone.Core.MediaFiles.TrackImport.Manual
                         Tracks = tracks,
                         FileTrackInfo = fileTrackInfo,
                         Path = file.Path,
+                        ReleaseGroup = file.ReleaseGroup,
                         Size = fileInfo.Length,
                         Modified = fileInfo.LastWriteTimeUtc,
                         Quality = file.Quality,
